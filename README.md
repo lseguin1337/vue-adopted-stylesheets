@@ -28,16 +28,17 @@ is equivalent to:
 ```javascript
 // vite.config.js
 const { defineConfig } = require('vite');
+const vue = require('@vitejs/plugin-vue');
 const { vueAdoptedStylesheetsPlugin } = require('vue-adopted-stylesheets');
 
 module.exports = defineConfig({
   // ...
   plugins: [
-    vueAdoptedStylesheetsPlugin(), // this plugin should be installed before vue
-    require('@vitejs/plugin-vue')({
+    vue({
       // any vue config plugin...
       customElement: true, // this is mandatory to make working the plugin
     }),
+    vueAdoptedStylesheetsPlugin(),
   ]
 });
 ```
