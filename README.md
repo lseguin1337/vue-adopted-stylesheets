@@ -2,28 +2,13 @@
 
 Vite plugin to use the adopted stylesheets api with your vue app
 
-## How to use it?
+## Install
 
 ```shell
 yarn add -D vue-adopted-stylesheets @vitejs/plugin-vue
 ```
 
-```javascript
-// vite.config.js
-const { defineConfig } = require('vite');
-const { vue } = require('vue-adopted-stylesheets');
-
-module.exports = defineConfig({
-  // ...
-  plugins: [
-    vue({
-      // any vue config plugin...
-    })
-  ]
-});
-```
-
-is equivalent to:
+## Plugin Usage
 
 ```javascript
 // vite.config.js
@@ -42,3 +27,20 @@ module.exports = defineConfig({
   ]
 });
 ```
+
+## Unlocked use cases
+
+```javascript
+// main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+
+const app = createApp(App);
+
+// Now you can mount your vue app inside a shadow root all the styling would be properly injected
+app.mount(document.querySelector('#custom-element-with-shadow-root').shadowRoot);
+```
+
+## Note
+
+This plugin is working even if the vue library is externalized
