@@ -30,18 +30,7 @@ module.exports = defineConfig({
 
 ## Unlocked use cases
 
-```javascript
-// main.js
-import { createApp } from 'vue';
-import App from './App.vue';
-
-const app = createApp(App);
-
-// Now you can mount your vue app inside a shadow root all the styling would be properly injected
-app.mount(document.querySelector('#custom-element-with-shadow-root').shadowRoot);
-```
-
-Or
+Simply exemple to use your app inside a webcomponent wrapper
 
 ```javascript
 import { createApp } from 'vue';
@@ -56,6 +45,19 @@ class MyApp extends HTMLElement {
 }
 
 customElements.define('my-app', MyApp);
+```
+
+Bootstrap your vue app inside any shadow root you want
+
+```javascript
+// main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+
+const app = createApp(App);
+
+// Now you can mount your vue app inside a shadow root all the styling would be properly injected
+app.mount(document.querySelector('#custom-element-with-shadow-root').shadowRoot);
 ```
 
 ## Note
