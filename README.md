@@ -41,6 +41,23 @@ const app = createApp(App);
 app.mount(document.querySelector('#custom-element-with-shadow-root').shadowRoot);
 ```
 
+Or
+
+```javascript
+import { createApp } from 'vue';
+import App from './App.vue';
+
+class MyApp extends HTMLElement {
+  constructor() {
+    super();
+    const app = createApp(App);
+    app.mount(this.attachShadow({ mode: 'open' }));
+  }
+}
+
+customElements.define('my-app', MyApp);
+```
+
 ## Note
 
 This plugin is working even if the vue library is externalized
