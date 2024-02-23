@@ -1,7 +1,7 @@
 {
   "name": "vue-adopted-stylesheets",
   "version": "0.0.4",
-  "main": "lib/index.js",
+  "main": "lib/index",
   "repository": "git@github.com:lseguin1337/vue-adopted-stylesheets.git",
   "author": "Lionel Seguin <lionel.seguin@contentsquare.com>",
   "license": "MIT"
